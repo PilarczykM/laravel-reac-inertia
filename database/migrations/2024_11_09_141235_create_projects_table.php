@@ -15,12 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->longText("description")->nullable();
-            $table->timestamps("due_date");
+            $table->timestamp("due_date")->nullable();
             $table->string("status");
             $table->string("image_path")->nullable();
+            $table->timestamps();
+
+            // Foreign keys
             $table->foreignId("created_by")->constrained("users");
             $table->foreignId("updated_by")->constrained("users");
-            $table->timestamps();
         });
     }
 

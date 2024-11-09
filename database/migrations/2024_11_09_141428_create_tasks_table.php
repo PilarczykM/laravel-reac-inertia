@@ -18,12 +18,14 @@ return new class extends Migration
             $table->string("image_path")->nullable();
             $table->string("status");
             $table->string("priority");
-            $table->timestamps("due_date");
+            $table->timestamp("due_date")->nullable();
+            $table->timestamps();
+            
+            // Foreign keys
             $table->foreignId("assigned_user_id")->constrained("users");
             $table->foreignId("created_by")->constrained("users");
             $table->foreignId("updated_by")->constrained("users");
             $table->foreignId("project_id")->constrained("projects");
-            $table->timestamps();
         });
     }
 
