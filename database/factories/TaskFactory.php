@@ -20,7 +20,7 @@ class TaskFactory extends Factory
             "name" => fake()->sentence(),
             "description" => fake()->realText(),
             "image_path" => fake()->imageUrl(),
-            "status" => fake()->randomElement(["todo", "inprogress", "completed"]),
+            "status" => fake()->randomElement(["todo", "in_progress", "completed"]),
             "priority" => fake()-> randomElement(["low", "medium", "high"]),
             "due_date" => fake()->dateTimeBetween("now", "+1 years"),
             "assigned_user_id" => 1,
